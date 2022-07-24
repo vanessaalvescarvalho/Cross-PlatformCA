@@ -1,0 +1,141 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+
+:root {
+    --color1: #DD1CF0;
+    --color2: #680D70;
+    --color3: #E766F2;
+    --color4: #6B2F70;
+    --color5: #AF17BD
+
+    --font-family: 'Kanit', sans-serif;
+}
+
+body {
+    background-color: #e666f278;
+    font-family: 'Kanit', sans-serif;
+    min-width: 500px;
+}
+
+
+.profile-photo{
+    border-radius: 100%;
+    overflow: hidden;
+    height: 150px;
+    width:150px;
+    background-color: var(--color1);
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+    border: 15px;
+}
+
+img {
+    width: 98%;
+    border-radius: 100%;
+}
+
+p{
+font-size: 14px;
+color: black;
+}
+
+h3{
+    color: var(--color5);
+    text-decoration: underline;
+}
+
+#container {
+    display: block;
+    max-width: 800px;
+    height: 600px;
+    border-radius: 25px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 10px;
+    color: var(--color2);
+}
+
+#form {
+    text-align: center;
+    padding: 10px;
+}
+
+.form-task {
+    padding: 10px;
+}
+
+#task-comment {
+    height: 60px;
+}
+
+input {
+    width: 300px;
+    height: 30px;
+    border-radius: 7px;
+    border: 1px solid rgb(145, 142, 142);
+    padding: 3px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.245);
+}
+
+.btn {
+    width: 300px;
+    height: 35px;
+    border-radius: 7px;
+    border: 1px solid rgb(145, 142, 142);
+    padding: 3px;
+    box-shadow: 1px 1px 4px black;
+    background-color: var(--color1);
+    text-decoration: bold;
+}
+
+.btn:hover {
+    background-color: var(--color2);
+    color: var(--color3);
+}
+
+.filter {
+    text-align: center;
+}
+.filter > a {
+    text-decoration: none;
+    background-color: var(--color1);
+    color: var(--color4);
+    height: 20px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 4px black;
+    text-align: center;
+    padding: 5px 20px;
+    margin: 10px;
+    width: 50px;
+}
+
+.filter > a:hover {
+    background-color: var(--color2);
+    color: var(--color3);
+}
+
+.items-container {
+    text-align: center;
+}
+
+#filter-link {
+    margin-top: 30px;
+}
+
+button {
+    background-color: var(--color1);
+    height: 25px;
+    text-decoration: bold;
+}
+button:hover {
+    background-color: var(--color2);
+}
+
+.title-task {
+    text-decoration: underline;
+}
