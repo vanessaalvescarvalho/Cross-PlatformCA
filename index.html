@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="container">
+
+        <h1>To Do List - Vanessa</h1>
+
+        <div class="filter">
+            <a href="index.html">All</a>
+            <a href="done.html" class="active">Done</a>
+            <a href="notdone.html">To do</a>
+        </div>
+
+        <form id="form">
+            <div class="form-task">
+                <input type="text" name="description" placeholder="Task">
+            </div>
+            <div class="form-task">
+                <input type="date" name="date" placeholder="dd/mm/yyyy">
+            </div>
+            <div class="form-task">
+                <input type="text" id="task-comment" name="comment" placeholder="Comment">
+            </div>
+            <div class="form-task">
+                <div class="form-task-btn">
+                    <button class="btn" type="submit" onclick="create(),window.location.reload();">ADD</button>
+                </div>
+            </div>
+        </form>
+        <h1 class="title-task">My Tasks:</h1>
+        <div class="items-container">
+            <div id="list" class="items"></div>
+        </div>
+
+
+    </div>
+
+
+    <!-- Script -->
+    <script src="js/script.js"></script>
+    <script src="index.js"></script>
+    
+</body>
+
+</html>
