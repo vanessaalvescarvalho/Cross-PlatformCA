@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+  <title>Vanessa's To Do List</title>
+</head>
+
+    <body>
+
+      <div class="profile-photo">
+        <img src="img/profile.jfif" />
+    </div>
+      <div id="container">
+        <div class="filter" id="filter-link">
+          <a href="index.html">All</a>
+          <a href="done.html" class="active">Done</a>
+          <a href="notdone.html">To do</a>
+        </div>
+
+        
+        <h1>All the tasks completed:</h1>
+        <div class="items-container">
+          <div id="list" class="items"></div>
+        </div>
+
+      </div>
+      <script>
+
+        const electron = require("electron");
+        const { ipcRenderer } = electron;
+
+        ipcRenderer.send("task:request:list");
+
+        ipcRenderer.on("task:response:list", (event, tasks) => {
+
+          const listDiv = document.getElementById("list");
+          tasks.forEach((task) => {
+
+            const taskDiv = document.createElement("div");
+            const taskName = document.createElement("h4");
+
+            taskName.innerHTML = `${task.description}`;
+            const dateTask = document.createElement("p");
+
+            dateTask.innerHTML = `<b> Date: </b> ${task.date}`;
+            const doneTask = document.createElement("label");
+
+            const commentTask = document.createElement("p");
+            commentTask.innerHTML = `<b> Comments: </b> ${task.comment}`;
+
+            doneTask.innerHTML = `<b> Complete: </b> ${task.done ? "Yes &nbsp; " : "No &nbsp; "}`;
+            const doneButton = document.createElement("button");
+
+            doneButton.innerHTML = "Complete task";
+            doneButton.disabled = task.done ? true : false;
+
+            doneButton.onclick = () => done(task.id);
+            const hr = document.createElement("hr");
+
+
+            if (task.done == true) {
+              taskDiv.appendChild(taskName);
+              taskDiv.appendChild(dateTask);
+              taskDiv.appendChild(commentTask);
+              taskDiv.appendChild(hr);
+              listDiv.append(taskDiv);
+            }
+
+          });
+        });
+        const done = (id) => {
+          ipcRenderer.send("task:done", id);
+          window.location.reload();
+        };
+      </script>
+
+      <!-- Script -->
+      <script src="js/script.js"></script>
+      <script src="index.js"></script>
+    </body>
+
+
+</html>
