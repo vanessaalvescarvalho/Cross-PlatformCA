@@ -16,6 +16,7 @@ body {
     background-color: #e666f278;
     font-family: 'Kanit', sans-serif;
     min-width: 500px;
+    background-image: url('../img/purple.png');
 }
 
 
@@ -48,10 +49,16 @@ h3{
 
 #container {
     display: block;
-    max-width: 800px;
-    height: 600px;
+    max-width: 500px;
+    
     border-radius: 25px;
     margin: auto;
+    background-color: #fff;
+
+    margin-bottom: 20px;
+    padding-bottom: 20px; 
+    
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.443);
 }
 
 h1 {
@@ -125,6 +132,7 @@ input {
 
 #filter-link {
     margin-top: 30px;
+    padding-top: 30px;
 }
 
 button {
